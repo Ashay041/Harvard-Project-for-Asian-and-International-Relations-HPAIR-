@@ -1,8 +1,7 @@
 # Urban Fire Spread Prediction System
 
-## ZERO API KEYS REQUIRED!
 
-A production-ready web application for simulating urban fire spread using Rothermel model.
+A web application for simulating urban fire spread using Rothermel model.
 
 ## Quick Start (3 Steps!)
 
