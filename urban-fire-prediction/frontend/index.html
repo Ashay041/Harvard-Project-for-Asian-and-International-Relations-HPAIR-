@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Fire Spread Prediction System</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-content">
+            <h1>🔥 Urban Fire Spread Prediction</h1>
+            <p>AI-Driven Risk Modeling | Zero API Keys Required</p>
+        </div>
+    </header>
+
+    <div class="app-container">
+        <div class="control-panel">
+            <div class="panel-section">
+                <h3>📍 Fire Origin</h3>
+                <div class="info-group">
+                    <label>Click on map to set fire origin</label>
+                    <div class="coordinates" id="originCoords">
+                        <span>Lat: --</span>
+                        <span>Lon: --</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-section">
+                <h3>🌤️ Weather Conditions</h3>
+                <div class="weather-info" id="weatherInfo">
+                    <div class="weather-loading">Loading...</div>
+                </div>
+                <button class="btn btn-secondary" onclick="refreshWeather()">Refresh Weather</button>
+            </div>
+
+            <div class="panel-section">
+                <h3>⚙️ Simulation Parameters</h3>
+                <div class="input-group">
+                    <label for="windSpeed">Wind Speed (km/h)</label>
+                    <input type="range" id="windSpeed" min="5" max="50" value="15" step="1">
+                    <span class="input-value" id="windSpeedValue">15</span>
+                </div>
+                <div class="input-group">
+                    <label for="buildingDensity">Building Density (%)</label>
+                    <input type="range" id="buildingDensity" min="0" max="100" value="40" step="5">
+                    <span class="input-value" id="buildingDensityValue">40</span>
+                </div>
+                <div class="input-group">
+                    <label for="timeSteps">Simulation Steps</label>
+                    <input type="range" id="timeSteps" min="5" max="20" value="10" step="1">
+                    <span class="input-value" id="timeStepsValue">10</span>
+                </div>
+            </div>
+
+            <div class="panel-section">
+                <button class="btn btn-primary" id="runSimulation" onclick="runSimulation()">▶️ Run Simulation</button>
+                <button class="btn btn-danger" id="clearSimulation" onclick="clearSimulation()">🗑️ Clear</button>
+            </div>
+
+            <div class="panel-section">
+                <h3>📊 Results</h3>
+                <div class="results">
+                    <div class="result-item"><span>Urban Wind:</span><span id="resultUrbanWind">--</span></div>
+                    <div class="result-item"><span>Spread Rate:</span><span id="resultSpreadRate">--</span></div>
+                    <div class="result-item"><span>Max Distance:</span><span id="resultMaxDistance">--</span></div>
+                    <div class="result-item"><span>Total Time:</span><span id="resultTotalTime">--</span></div>
+                </div>
+            </div>
+
+            <div class="panel-section" id="timeSliderSection" style="display: none;">
+                <h3>⏱️ Time Progression</h3>
+                <div class="time-slider-container">
+                    <input type="range" id="timeSlider" min="0" max="10" value="10" step="1">
+                    <div class="time-display" id="timeDisplay">50 minutes</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <div id="map"></div>
+            <div class="map-instructions" id="mapInstructions">
+                <div class="instruction-content">
+                    <h3>🎯 Getting Started</h3>
+                    <ol>
+                        <li>Click anywhere on the map to set fire origin</li>
+                        <li>Adjust simulation parameters on the left</li>
+                        <li>Click "Run Simulation" to see fire spread</li>
+                        <li>Use time slider to control visualization</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+                <div class="spinner"></div>
+                <p>Running simulation...</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="app-footer">
+        <p>Urban Fire Spread Prediction | Rothermel Model | HPAIR | 🆓 Zero API Keys</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+    <script type="module" src="config/config.js"></script>
+    <script type="module" src="js/map.js"></script>
+    <script type="module" src="js/fire-simulation.js"></script>
+    <script type="module" src="js/ui-controls.js"></script>
+</body>
+</html>
