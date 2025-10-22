@@ -1,10 +1,10 @@
-# 🔥 Urban Fire Spread Prediction System
+# Urban Fire Spread Prediction System
 
-## 🎉 ZERO API KEYS REQUIRED!
+## ZERO API KEYS REQUIRED!
 
 A production-ready web application for simulating urban fire spread using Rothermel model.
 
-## 🚀 Quick Start (3 Steps!)
+## Quick Start (3 Steps!)
 
 ### 1. Install Dependencies
 ```bash
@@ -22,26 +22,26 @@ python app.py
 http://localhost:5000
 ```
 
-**That's it! No API keys needed!** ✅
+**That's it! No API keys needed!** 
 
-## ✨ Features
+## Features
 
-- ✅ Interactive map with OpenStreetMap (FREE!)
-- ✅ Click-to-simulate fire origin
-- ✅ Real-time fire spread simulation
-- ✅ Rothermel model adapted for urban environments
-- ✅ Time slider for progression control
-- ✅ Heat map visualization
-- ✅ Weather integration (mock fallback)
-- ✅ Beautiful responsive UI
+- Interactive map with OpenStreetMap (FREE!)
+- Click-to-simulate fire origin
+- Real-time fire spread simulation
+- Rothermel model adapted for urban environments
+- Time slider for progression control
+- Heat map visualization
+- Weather integration (mock fallback)
+- Beautiful responsive UI
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 - **Frontend:** Leaflet.js, OpenStreetMap, HTML/CSS/JS
 - **Backend:** Python Flask, NumPy
 - **Zero API keys required!**
 
-## 📖 Usage
+## Usage
 
 1. Wait for map to load (2-3 seconds)
 2. Click anywhere on map to set fire origin
@@ -49,7 +49,7 @@ http://localhost:5000
 4. Click "Run Simulation"
 5. Explore results with time slider
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 **Map not loading?**
 - Check internet connection
@@ -59,7 +59,7 @@ http://localhost:5000
 - Make sure backend is running: `python backend/app.py`
 - Check browser console for errors
 
-## 🎓 Credits
+## Credits
 
 Based on HPAIR Impact Challenge Project  
 Carnegie Mellon University
@@ -70,6 +70,6 @@ Uses free open-source tools:
 - Flask
 - NumPy
 
-## 📄 License
+## License
 
 Educational and Research Use
